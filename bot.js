@@ -1,25 +1,7 @@
-var token = '5243181264:AAHaDTGJFDOg0SwGWDvDO2n1ynzRSj5NDew';
+const TelegramBot = require('node-telegram-bot-api');
+const token = '5306549693:AAGwZ-6F-589xONPdx5t3v4OJBCVj_CWK9g';
+const bot = new TelegramBot(token, {polling: true});
 
-var Bot = require('node-telegram-bot-api'),
-    bot = new Bot(token, { polling: true });
-
-console.log('bot server started...');
-
-// hello command
-bot.onText(/^\/say_hello (.+)$/, function (msg, match) {
-  var name = match[1];
-  bot.sendMessage(msg.chat.id, 'Hello ' + name + '!').then(function () {
-    // reply sent!
-  });
-});
-
-// sum command
-bot.onText(/^\/sum((\s+\d+)+)$/, function (msg, match) {
-  var result = 0;
-  match[1].trim().split(/\s+/).forEach(function (i) {
-    result += (+i || 0);
-  })
-  bot.sendMessage(msg.chat.id, result).then(function () {
-    // reply sent!
-  });
+bot.on("message", async (msg) => {
+      bot.sendMessage(msg.chat.id, `${Number(msg.text)*2}`);
 });
