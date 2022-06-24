@@ -10,7 +10,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"VERCEL_ENV: $VERCEL_ENV\"
+    "vercel build": "echo \"VERCEL_ENV: $VERCEL_ENV\"
 
 if [[ \"$VERCEL_ENV\" == \"production\" ]] ; then
   # Proceed with the build
