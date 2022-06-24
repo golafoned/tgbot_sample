@@ -9,9 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "npm run inst & npm run bot",
-    "inst":"npm install",
-    "bot":"node index.js"
+    "build":"node ignore-step.js && node index.js"
   },
   "author": "",
   "license": "ISC"
