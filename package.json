@@ -9,7 +9,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js"
+    "start": "npm run inst & npm run bot",
+    "inst":"npm install",
+    "bot":"node index.js"
   },
   "author": "",
   "license": "ISC"
